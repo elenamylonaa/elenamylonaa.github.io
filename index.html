@@ -3,70 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Dr Elena Mylona</title>
+
+    <title>Dr Elena Mylona | Academic Researcher</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             background: #f8f6f2;
-            color: #222;
-            font-family: Arial, sans-serif;
+            color: #242321;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
-            padding: 70px 40px;
+            padding: 70px 50px;
         }
 
         header {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 35px;
-            margin-bottom: 60px;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #cfcac2;
         }
 
         h1 {
-            font-family: Georgia, serif;
-            font-size: 58px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(52px, 8vw, 90px);
             font-weight: normal;
-            margin: 0 0 15px;
+            line-height: 1;
+            margin: 0 0 30px;
+            letter-spacing: -2px;
         }
 
         .subtitle {
-            font-size: 18px;
-            color: #666;
+            font-size: 19px;
+            line-height: 1.7;
+            color: #66615b;
         }
 
         nav {
-            margin-top: 30px;
+            margin-top: 50px;
         }
 
         nav a {
+            display: inline-block;
             margin-right: 30px;
-            color: #222;
+            margin-bottom: 10px;
+            color: #242321;
             text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #8a5a44;
         }
 
         section {
-            margin-bottom: 60px;
+            padding: 100px 0;
+            border-bottom: 1px solid #cfcac2;
+        }
+
+        .section-number {
+            font-size: 13px;
+            color: #8a5a44;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         h2 {
-            font-family: Georgia, serif;
-            font-size: 30px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
             font-weight: normal;
+            line-height: 1.1;
+            margin: 15px 0 40px;
+        }
+
+        h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: normal;
+            margin-top: 50px;
         }
 
         p {
-            max-width: 700px;
-            line-height: 1.7;
+            max-width: 780px;
             font-size: 17px;
         }
 
+        .intro {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            line-height: 1.5;
+            max-width: 850px;
+        }
+
+        .publication {
+            padding: 25px 0;
+            border-top: 1px solid #d8d3cc;
+            max-width: 850px;
+        }
+
+        .publication:first-of-type {
+            margin-top: 20px;
+        }
+
+        .publication-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+        }
+
+        .small {
+            color: #77716a;
+            font-size: 15px;
+        }
+
+        .highlight {
+            margin: 40px 0;
+            padding: 30px;
+            border-left: 3px solid #8a5a44;
+            background: #f1eee9;
+            max-width: 850px;
+        }
+
+        .contact {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+        }
+
         footer {
-            border-top: 1px solid #ccc;
-            padding-top: 25px;
-            color: #777;
+            padding: 35px 0;
+            color: #77716a;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            header {
+                min-height: 85vh;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            h2 {
+                font-size: 38px;
+            }
+
+            nav a {
+                margin-right: 15px;
+            }
         }
     </style>
 </head>
@@ -75,49 +177,228 @@
 
 <div class="container">
 
-    <header>
-        <h1>Dr Elena Mylona</h1>
-        <div class="subtitle">Academic · Researcher · Writer</div>
+    <!-- HEADER -->
+
+    <header id="home">
+
+        <h1>Dr Elena<br>Mylona</h1>
+
+        <div class="subtitle">
+            <em>Marie Skłodowska-Curie Postdoctoral Fellow</em><br>
+            Department of Education · University of Cyprus
+        </div>
 
         <nav>
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
+            <a href="#teaching">Teaching</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
+
+    <!-- ABOUT -->
+
     <section id="about">
-        <h2>About</h2>
-        <p>
-            Welcome to my academic website. I am a researcher interested in
-        time use research. My work explores [brief description].
+
+        <div class="section-number">01 · About</div>
+
+        <h2>Researcher</h2>
+
+        <p class="intro">
+            My academic background lies at the intersection of Quantitative
+            Sociology, Public Health and research methods. My work focuses on
+            understanding social life through innovative quantitative methods,
+            with a particular interest in time-use research.
         </p>
+
+        <p>
+            I completed an ESRC 1+3 fully funded doctoral studentship at the
+            University of Warwick, comprising an integrated Master's in Social
+            Science Research Methods and a PhD in Sociology. During my doctoral
+            studies, I received several awards, including an ESRC Overseas
+            Institutional Visit award and an ESRC academic events award to
+            co-organise the Quantitative Methods Doctoral Conference at
+            Warwick.
+        </p>
+
+        <p>
+            Following my doctorate, I was awarded a part-time postdoctoral
+            fellowship at the Institute of Advanced Study, University of
+            Warwick. This provided opportunities for interdisciplinary
+            collaboration, innovative dissemination and cross-disciplinary
+            research, alongside my continuing work at the Centre for Time Use
+            Research (CTUR), UCL.
+        </p>
+
     </section>
+
+
+    <!-- RESEARCH -->
 
     <section id="research">
-        <h2>Research</h2>
+
+        <div class="section-number">02 · Research</div>
+
+        <h2>Research &amp;<br>Networks</h2>
+
         <p>
-            My current research focuses on [research topic].
+            My research combines methodological development with substantive
+            questions in sociology and public health. I am particularly
+            interested in time-use diary data and in developing methods that
+            enable researchers to better understand how people allocate their
+            time.
         </p>
+
+        <div class="highlight">
+            <strong>Time-use research</strong><br>
+            At CTUR, I have contributed to projects producing policy briefings,
+            data-management guides, research resources and introductory
+            time-use training. I have also developed and shared time-use data
+            processing syntax on GitHub to support reproducible research.
+        </div>
+
+        <p>
+            My international research network includes collaborations and
+            research visits with colleagues at institutions including the
+            University of Western Australia. During my research visit to UWA,
+            I presented my work in the Business School seminar series and
+            collaborated on the use of time-use diary data in transport studies.
+        </p>
+
+        <p>
+            I have presented my research at more than ten national and
+            international conferences, including the International Conference
+            on Social Science Methodology (RC33) and the International
+            Association for Time Use Research (IATUR) Conference.
+        </p>
+
     </section>
+
+
+    <!-- PUBLICATIONS -->
 
     <section id="publications">
-        <h2>Selected Publications</h2>
-        <p>
-            Publication 1 — Journal, Year
+
+        <div class="section-number">03 · Publications</div>
+
+        <h2>Selected<br>Publications</h2>
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Quantitative methodological research in time-use studies
+            </div>
+
+            <div class="small">
+                Journal for Time Use Research
+            </div>
+
+        </div>
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Quantitative methodological research in time-use studies
+            </div>
+
+            <div class="small">
+                Journal for Time Use Research
+            </div>
+
+        </div>
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Qualitative research in public health and social research
+            </div>
+
+            <div class="small">
+                BMC Research Notes
+            </div>
+
+        </div>
+
+        <div class="publication">
+
+            <div class="publication-title">
+                Systematic review research from my doctoral studies
+            </div>
+
+            <div class="small">
+                The Lancet Meeting Abstracts · peer-reviewed publication forthcoming
+            </div>
+
+        </div>
+
+        <p class="small">
+            Full publication details and links can be added here.
         </p>
-        <p>
-            Publication 2 — Journal, Year
-        </p>
+
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>
-            your.email@example.com
+
+    <!-- TEACHING -->
+
+    <section id="teaching">
+
+        <div class="section-number">04 · Teaching</div>
+
+        <h2>Teaching &amp;<br>Outreach</h2>
+
+        <p class="intro">
+            I am passionate about teaching, research methods and widening
+            access to research.
         </p>
+
+        <p>
+            I have more than five years of university-level teaching experience,
+            including small-group teaching, module leadership, assessment,
+            dissertation supervision, marking and student mentoring.
+        </p>
+
+        <p>
+            My teaching experience spans Sociology of Health, Quantitative
+            Sociology, Research Methods and Research Design. I have also
+            completed the Fellowship of the Higher Education Academy (FHEA).
+        </p>
+
+        <p>
+            My interest in educational outreach has led me to work with the
+            UK Brilliant Club, where I delivered six research-based classes to
+            high-school students in early 2025.
+        </p>
+
+        <p>
+            I have also independently designed and delivered an introductory
+            time-use research training workshop for academics and policymakers.
+        </p>
+
     </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-number">05 · Contact</div>
+
+        <h2>Let's<br>Connect</h2>
+
+        <p>
+            I welcome conversations about research, collaboration,
+            methodology, time-use research and teaching.
+        </p>
+
+        <p class="contact">
+            Your email address
+        </p>
+
+    </section>
+
 
     <footer>
         © 2026 Dr Elena Mylona
