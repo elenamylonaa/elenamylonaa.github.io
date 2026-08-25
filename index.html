@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dr Elena Mylona | Academic Researcher</title>
+    <title>Dr Elena Mylona</title>
 
     <style>
+        :root {
+            --paper: #f5f1ea;
+            --paper-dark: #ebe5dc;
+            --ink: #24221f;
+            --muted: #746e67;
+            --accent: #8b5545;
+            --line: #d7d0c6;
+            --white: #fffdf9;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -17,157 +27,384 @@
 
         body {
             margin: 0;
-            background: #f8f6f2;
-            color: #242321;
-            font-family: Arial, Helvetica, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 17px;
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 50px;
+        a {
+            color: inherit;
         }
 
-        header {
-            min-height: 75vh;
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 55px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 90px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 1px solid #cfcac2;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-name {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 82vh;
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+            align-items: center;
+            gap: 80px;
+            padding: 80px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            margin-bottom: 25px;
         }
 
         h1 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(52px, 8vw, 90px);
+            font-size: clamp(70px, 10vw, 150px);
             font-weight: normal;
-            line-height: 1;
-            margin: 0 0 30px;
-            letter-spacing: -2px;
+            line-height: 0.88;
+            letter-spacing: -6px;
+            margin: 0;
         }
 
-        .subtitle {
-            font-size: 19px;
+        .hero-description {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            line-height: 1.5;
+            max-width: 470px;
+            margin-bottom: 30px;
+        }
+
+        .hero-meta {
+            color: var(--muted);
+            font-size: 15px;
             line-height: 1.7;
-            color: #66615b;
         }
 
-        nav {
-            margin-top: 50px;
+        .portrait-frame {
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            margin-left: auto;
+            background: var(--paper-dark);
         }
 
-        nav a {
-            display: inline-block;
-            margin-right: 30px;
-            margin-bottom: 10px;
-            color: #242321;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
-        nav a:hover {
-            color: #8a5a44;
-        }
+        /* SECTIONS */
 
         section {
-            padding: 100px 0;
-            border-bottom: 1px solid #cfcac2;
+            padding: 130px 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .section-number {
-            font-size: 13px;
-            color: #8a5a44;
-            letter-spacing: 2px;
+        .section-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 80px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 11px;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h2 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 46px;
+            font-size: clamp(45px, 6vw, 75px);
             font-weight: normal;
-            line-height: 1.1;
-            margin: 15px 0 40px;
+            line-height: 0.98;
+            letter-spacing: -2px;
+            margin: 0 0 45px;
         }
 
         h3 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 25px;
+            font-size: 28px;
             font-weight: normal;
-            margin-top: 50px;
+            margin: 55px 0 20px;
         }
 
         p {
             max-width: 780px;
-            font-size: 17px;
+            margin: 0 0 25px;
         }
 
-        .intro {
+        .lead {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            line-height: 1.45;
+            max-width: 820px;
+            margin-bottom: 45px;
+        }
+
+        /* RESEARCH STATEMENT */
+
+        .statement {
+            margin: 70px 0;
+            padding: 55px;
+            background: var(--paper-dark);
+            border-left: 4px solid var(--accent);
+            max-width: 850px;
+        }
+
+        .statement p {
             font-family: Georgia, "Times New Roman", serif;
             font-size: 25px;
             line-height: 1.5;
+            margin: 0;
+        }
+
+        /* RESEARCH AREAS */
+
+        .research-list {
+            margin-top: 55px;
+            border-top: 1px solid var(--line);
             max-width: 850px;
+        }
+
+        .research-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 25px;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .research-number {
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+        }
+
+        .research-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+        }
+
+        /* PUBLICATIONS */
+
+        .publication-list {
+            max-width: 900px;
         }
 
         .publication {
-            padding: 25px 0;
-            border-top: 1px solid #d8d3cc;
-            max-width: 850px;
-        }
-
-        .publication:first-of-type {
-            margin-top: 20px;
-        }
-
-        .publication-title {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 21px;
-        }
-
-        .small {
-            color: #77716a;
-            font-size: 15px;
-        }
-
-        .highlight {
-            margin: 40px 0;
-            padding: 30px;
-            border-left: 3px solid #8a5a44;
-            background: #f1eee9;
-            max-width: 850px;
-        }
-
-        .contact {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 27px;
-        }
-
-        footer {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 30px;
             padding: 35px 0;
-            color: #77716a;
+            border-top: 1px solid var(--line);
+        }
+
+        .publication:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .pub-number {
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+        }
+
+        .pub-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            line-height: 1.35;
+            margin-bottom: 8px;
+        }
+
+        .pub-details {
+            color: var(--muted);
             font-size: 14px;
         }
 
-        @media (max-width: 700px) {
-            .container {
-                padding: 40px 25px;
+        /* TEACHING */
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--line);
+            margin-top: 60px;
+            max-width: 900px;
+        }
+
+        .experience {
+            background: var(--paper);
+            padding: 40px;
+        }
+
+        .experience h3 {
+            margin: 0 0 15px;
+            font-size: 24px;
+        }
+
+        .experience p {
+            color: var(--muted);
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* LINKS */
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .link-button {
+            display: inline-block;
+            border: 1px solid var(--ink);
+            padding: 11px 20px;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: all 0.2s ease;
+        }
+
+        .link-button:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        /* CONTACT */
+
+        .contact-link {
+            display: inline-block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 5vw, 55px);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: color 0.2s ease;
+            word-break: break-word;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 0 60px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 0 25px;
             }
 
-            header {
-                min-height: 85vh;
+            nav {
+                height: auto;
+                padding: 25px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                grid-template-columns: 1fr;
+                padding: 80px 0;
+                gap: 50px;
+            }
+
+            h1 {
+                font-size: 75px;
+                letter-spacing: -4px;
+            }
+
+            .portrait-frame {
+                margin: 0;
+                max-width: 100%;
             }
 
             section {
-                padding: 70px 0;
+                padding: 80px 0;
             }
 
-            h2 {
-                font-size: 38px;
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            nav a {
-                margin-right: 15px;
+            .statement {
+                padding: 30px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publication {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+            }
+
+            footer {
+                display: block;
+            }
+
+            footer div + div {
+                margin-top: 10px;
             }
         }
     </style>
@@ -175,26 +412,54 @@
 
 <body>
 
-<div class="container">
+<div class="page">
 
-    <!-- HEADER -->
+    <!-- NAVIGATION -->
 
-    <header id="home">
-
-        <h1>Dr Elena<br>Mylona</h1>
-
-        <div class="subtitle">
-            <em>Marie Skłodowska-Curie Postdoctoral Fellow</em><br>
-            Department of Education · University of Cyprus
+    <nav>
+        <div class="nav-name">
+            Dr Elena Mylona
         </div>
 
-        <nav>
+        <div class="nav-links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
             <a href="#teaching">Teaching</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div>
+            <div class="eyebrow">
+                Researcher · Sociologist · Educator
+            </div>
+
+            <h1>
+                Elena<br>Mylona
+            </h1>
+
+            <div style="margin-top: 45px;">
+                <div class="hero-description">
+                    Quantitative sociologist and public health researcher
+                    interested in time use, research methods and social life.
+                </div>
+
+                <div class="hero-meta">
+                    <em>Marie Skłodowska-Curie Postdoctoral Fellow</em><br>
+                    Department of Education · University of Cyprus
+                </div>
+            </div>
+        </div>
+
+        <div class="portrait-frame">
+            <img src="elena.jpg" alt="Portrait of Dr Elena Mylona">
+        </div>
 
     </header>
 
@@ -203,35 +468,53 @@
 
     <section id="about">
 
-        <div class="section-number">01 · About</div>
+        <div class="section-grid">
 
-        <h2>Researcher</h2>
+            <div class="section-label">
+                01 · About
+            </div>
 
-        <p class="intro">
-            My academic background lies at the intersection of Quantitative
-            Sociology, Public Health and research methods. My work focuses on
-            understanding social life through innovative quantitative methods,
-            with a particular interest in time-use research.
-        </p>
+            <div>
 
-        <p>
-            I completed an ESRC 1+3 fully funded doctoral studentship at the
-            University of Warwick, comprising an integrated Master's in Social
-            Science Research Methods and a PhD in Sociology. During my doctoral
-            studies, I received several awards, including an ESRC Overseas
-            Institutional Visit award and an ESRC academic events award to
-            co-organise the Quantitative Methods Doctoral Conference at
-            Warwick.
-        </p>
+                <h2>
+                    Researcher with<br>
+                    a methodological lens.
+                </h2>
 
-        <p>
-            Following my doctorate, I was awarded a part-time postdoctoral
-            fellowship at the Institute of Advanced Study, University of
-            Warwick. This provided opportunities for interdisciplinary
-            collaboration, innovative dissemination and cross-disciplinary
-            research, alongside my continuing work at the Centre for Time Use
-            Research (CTUR), UCL.
-        </p>
+                <p class="lead">
+                    My academic background lies in Quantitative Sociology
+                    and Public Health, with a particular interest in
+                    research methods and time-use research.
+                </p>
+
+                <p>
+                    I completed an ESRC 1+3 fully funded doctoral studentship
+                    at the University of Warwick, including an integrated
+                    Master's in Social Science Research Methods and a PhD
+                    in Sociology.
+                </p>
+
+                <p>
+                    During my doctoral studies, I received several prestigious
+                    awards, including an ESRC Overseas Institutional Visit
+                    award and an ESRC academic events award to co-organise
+                    the Quantitative Methods Doctoral Conference at Warwick,
+                    which brought together 20 early-career researchers.
+                </p>
+
+                <p>
+                    Following my doctorate, I was awarded a one-year,
+                    part-time postdoctoral fellowship at the Institute of
+                    Advanced Study, University of Warwick. This provided
+                    opportunities for interdisciplinary research, engagement
+                    with early-career researchers and innovative dissemination,
+                    alongside my continuing work at the Centre for Time Use
+                    Research at UCL.
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -240,40 +523,124 @@
 
     <section id="research">
 
-        <div class="section-number">02 · Research</div>
+        <div class="section-grid">
 
-        <h2>Research &amp;<br>Networks</h2>
+            <div class="section-label">
+                02 · Research
+            </div>
 
-        <p>
-            My research combines methodological development with substantive
-            questions in sociology and public health. I am particularly
-            interested in time-use diary data and in developing methods that
-            enable researchers to better understand how people allocate their
-            time.
-        </p>
+            <div>
 
-        <div class="highlight">
-            <strong>Time-use research</strong><br>
-            At CTUR, I have contributed to projects producing policy briefings,
-            data-management guides, research resources and introductory
-            time-use training. I have also developed and shared time-use data
-            processing syntax on GitHub to support reproducible research.
+                <h2>
+                    Time.<br>
+                    Methods.<br>
+                    Society.
+                </h2>
+
+                <p class="lead">
+                    My work combines methodological development with
+                    substantive questions in sociology and public health,
+                    with a particular focus on time-use research.
+                </p>
+
+                <div class="statement">
+                    <p>
+                        I am interested in how people organise their lives,
+                        how time-use data can illuminate social questions,
+                        and how methodological innovation can strengthen
+                        quantitative social research.
+                    </p>
+                </div>
+
+                <div class="research-list">
+
+                    <div class="research-item">
+                        <div class="research-number">01</div>
+                        <div class="research-title">
+                            Quantitative Sociology &amp; Public Health
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-number">02</div>
+                        <div class="research-title">
+                            Time-use research &amp; diary data
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-number">03</div>
+                        <div class="research-title">
+                            Quantitative research methods
+                        </div>
+                    </div>
+
+                    <div class="research-item">
+                        <div class="research-number">04</div>
+                        <div class="research-title">
+                            Interdisciplinary &amp; reproducible research
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3>
+                    Collaboration &amp; networks
+                </h3>
+
+                <p>
+                    My research has involved collaboration across disciplines
+                    and institutions. During my time at the Institute of
+                    Advanced Study, I engaged with interdisciplinary
+                    early-career researchers while continuing my work at CTUR,
+                    UCL.
+                </p>
+
+                <p>
+                    I was also awarded an IAS Award supporting a research visit
+                    to the University of Western Australia. There, I presented
+                    my research in the UWA Business School seminar series and
+                    collaborated on the use of time-use diary data in
+                    transport studies.
+                </p>
+
+                <p>
+                    I have presented my work at more than ten national and
+                    international conferences, including the International
+                    Conference on Social Science Methodology (RC33) and the
+                    International Association for Time Use Research (IATUR)
+                    Conference.
+                </p>
+
+                <p>
+                    At IATUR, I connected with Professor Jonathan Gershuny,
+                    Director of the Centre for Time Use Research at UCL,
+                    which led to a part-time position specialising in
+                    time-use research methods, a role I continue to hold.
+                </p>
+
+                <h3>
+                    Research in practice
+                </h3>
+
+                <p>
+                    At CTUR, I have led projects producing policy briefings
+                    for the UK Social Mobility Commission and the What Works
+                    Centre for Wellbeing, data-management guides for the
+                    Click and Drag Diary Instrument and the Millennium Cohort
+                    Study, and introductory time-use training workshops.
+                </p>
+
+                <p>
+                    During my time at What Works for Wellbeing, I developed
+                    and shared time-use data-processing syntax on GitHub to
+                    support researchers in replicating analyses and extending
+                    existing research.
+                </p>
+
+            </div>
+
         </div>
-
-        <p>
-            My international research network includes collaborations and
-            research visits with colleagues at institutions including the
-            University of Western Australia. During my research visit to UWA,
-            I presented my work in the Business School seminar series and
-            collaborated on the use of time-use diary data in transport studies.
-        </p>
-
-        <p>
-            I have presented my research at more than ten national and
-            international conferences, including the International Conference
-            on Social Science Methodology (RC33) and the International
-            Association for Time Use Research (IATUR) Conference.
-        </p>
 
     </section>
 
@@ -282,61 +649,93 @@
 
     <section id="publications">
 
-        <div class="section-number">03 · Publications</div>
+        <div class="section-grid">
 
-        <h2>Selected<br>Publications</h2>
-
-        <div class="publication">
-
-            <div class="publication-title">
-                Quantitative methodological research in time-use studies
+            <div class="section-label">
+                03 · Publications
             </div>
 
-            <div class="small">
-                Journal for Time Use Research
+            <div>
+
+                <h2>
+                    Selected<br>
+                    work
+                </h2>
+
+                <p class="lead">
+                    My publication record includes quantitative methodological
+                    research, qualitative research and systematic review work.
+                </p>
+
+                <div class="publication-list">
+
+                    <div class="publication">
+                        <div class="pub-number">01</div>
+                        <div>
+                            <div class="pub-title">
+                                Publication title
+                            </div>
+                            <div class="pub-details">
+                                Journal for Time Use Research
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication">
+                        <div class="pub-number">02</div>
+                        <div>
+                            <div class="pub-title">
+                                Publication title
+                            </div>
+                            <div class="pub-details">
+                                Journal for Time Use Research
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication">
+                        <div class="pub-number">03</div>
+                        <div>
+                            <div class="pub-title">
+                                Publication title
+                            </div>
+                            <div class="pub-details">
+                                BMC Research Notes
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication">
+                        <div class="pub-number">04</div>
+                        <div>
+                            <div class="pub-title">
+                                Systematic review chapter — publication details to be added
+                            </div>
+                            <div class="pub-details">
+                                The Lancet Meeting Abstracts · publication pending
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="links">
+                    <a class="link-button" href="#">
+                        Full publications
+                    </a>
+
+                    <a class="link-button" href="#">
+                        Google Scholar
+                    </a>
+
+                    <a class="link-button" href="#">
+                        ORCID
+                    </a>
+                </div>
+
             </div>
 
         </div>
-
-        <div class="publication">
-
-            <div class="publication-title">
-                Quantitative methodological research in time-use studies
-            </div>
-
-            <div class="small">
-                Journal for Time Use Research
-            </div>
-
-        </div>
-
-        <div class="publication">
-
-            <div class="publication-title">
-                Qualitative research in public health and social research
-            </div>
-
-            <div class="small">
-                BMC Research Notes
-            </div>
-
-        </div>
-
-        <div class="publication">
-
-            <div class="publication-title">
-                Systematic review research from my doctoral studies
-            </div>
-
-            <div class="small">
-                The Lancet Meeting Abstracts · peer-reviewed publication forthcoming
-            </div>
-
-        </div>
-
-        <p class="small">
-            Full publication details and links can be added here.
-        </p>
 
     </section>
 
@@ -345,37 +744,80 @@
 
     <section id="teaching">
 
-        <div class="section-number">04 · Teaching</div>
+        <div class="section-grid">
 
-        <h2>Teaching &amp;<br>Outreach</h2>
+            <div class="section-label">
+                04 · Teaching
+            </div>
 
-        <p class="intro">
-            I am passionate about teaching, research methods and widening
-            access to research.
-        </p>
+            <div>
 
-        <p>
-            I have more than five years of university-level teaching experience,
-            including small-group teaching, module leadership, assessment,
-            dissertation supervision, marking and student mentoring.
-        </p>
+                <h2>
+                    Teaching<br>
+                    &amp; outreach
+                </h2>
 
-        <p>
-            My teaching experience spans Sociology of Health, Quantitative
-            Sociology, Research Methods and Research Design. I have also
-            completed the Fellowship of the Higher Education Academy (FHEA).
-        </p>
+                <p class="lead">
+                    I am passionate about teaching, research methods and
+                    widening access to research.
+                </p>
 
-        <p>
-            My interest in educational outreach has led me to work with the
-            UK Brilliant Club, where I delivered six research-based classes to
-            high-school students in early 2025.
-        </p>
+                <div class="experience-grid">
 
-        <p>
-            I have also independently designed and delivered an introductory
-            time-use research training workshop for academics and policymakers.
-        </p>
+                    <div class="experience">
+                        <h3>
+                            University teaching
+                        </h3>
+                        <p>
+                            More than five years of university-level teaching
+                            experience, including small-group teaching,
+                            module leadership, assessment, dissertation
+                            supervision, marking and student mentoring.
+                        </p>
+                    </div>
+
+                    <div class="experience">
+                        <h3>
+                            Research methods
+                        </h3>
+                        <p>
+                            Teaching experience across Sociology of Health,
+                            Quantitative Sociology, Research Methods and
+                            Research Design.
+                        </p>
+                    </div>
+
+                    <div class="experience">
+                        <h3>
+                            Outreach
+                        </h3>
+                        <p>
+                            Through the UK Brilliant Club, I delivered six
+                            research-based classes to high-school students
+                            in early 2025.
+                        </p>
+                    </div>
+
+                    <div class="experience">
+                        <h3>
+                            Research training
+                        </h3>
+                        <p>
+                            I independently designed and delivered an
+                            introductory time-use research training workshop
+                            for academics and policymakers.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p style="margin-top: 45px;">
+                    <strong>Fellow of the Higher Education Academy (FHEA)</strong>
+                </p>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -384,24 +826,69 @@
 
     <section id="contact">
 
-        <div class="section-number">05 · Contact</div>
+        <div class="section-grid">
 
-        <h2>Let's<br>Connect</h2>
+            <div class="section-label">
+                05 · Contact
+            </div>
 
-        <p>
-            I welcome conversations about research, collaboration,
-            methodology, time-use research and teaching.
-        </p>
+            <div>
 
-        <p class="contact">
-            Your email address
-        </p>
+                <h2>
+                    Let's<br>
+                    connect.
+                </h2>
+
+                <p class="lead">
+                    I welcome conversations about research, collaboration,
+                    methodology, time-use research, teaching and
+                    interdisciplinary projects.
+                </p>
+
+                <a class="contact-link"
+                   href="mailto:YOUR.EMAIL@example.com">
+                    YOUR.EMAIL@example.com
+                </a>
+
+                <div class="links">
+
+                    <a class="link-button" href="#">
+                        ORCID
+                    </a>
+
+                    <a class="link-button" href="#">
+                        Google Scholar
+                    </a>
+
+                    <a class="link-button" href="#">
+                        GitHub
+                    </a>
+
+                    <a class="link-button" href="#">
+                        CV
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
 
+    <!-- FOOTER -->
+
     <footer>
-        © 2026 Dr Elena Mylona
+
+        <div>
+            © 2026 Dr Elena Mylona
+        </div>
+
+        <div>
+            Department of Education · University of Cyprus
+        </div>
+
     </footer>
 
 </div>
