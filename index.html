@@ -326,15 +326,24 @@
 
     /* PUBLICATIONS */
 
+    .publication-category {
+        color: var(--burgundy);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 10px;
+        margin-top: 55px;
+        margin-bottom: 5px;
+    }
+
     .publication-list {
-        max-width: 900px;
+        max-width: 920px;
     }
 
     .publication {
         display: grid;
-        grid-template-columns: 70px 1fr;
-        gap: 30px;
-        padding: 35px 0;
+        grid-template-columns: 55px 1fr;
+        gap: 25px;
+        padding: 30px 0;
         border-top: 1px solid var(--line);
     }
 
@@ -350,14 +359,89 @@
 
     .pub-title {
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 24px;
-        line-height: 1.35;
+        font-size: 21px;
+        line-height: 1.45;
         margin-bottom: 8px;
+    }
+
+    .pub-title a {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .pub-title a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+
+    .pub-authors {
+        font-size: 14px;
+        color: var(--ink);
+        margin-bottom: 4px;
     }
 
     .pub-details {
         color: var(--muted);
         font-size: 14px;
+    }
+
+    .pub-details a {
+        color: var(--burgundy);
+        text-decoration: none;
+        border-bottom: 1px solid var(--burgundy);
+    }
+
+    .publication-note {
+        margin-top: 45px;
+        color: var(--muted);
+        font-size: 15px;
+    }
+
+    .publication-note a {
+        color: var(--burgundy);
+        text-decoration: none;
+        border-bottom: 1px solid var(--burgundy);
+    }
+
+    /* EDUCATION */
+
+    .education-list {
+        max-width: 900px;
+        border-top: 1px solid var(--line);
+    }
+
+    .education-item {
+        padding: 35px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .education-degree {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 24px;
+        line-height: 1.35;
+        margin-bottom: 5px;
+    }
+
+    .education-degree strong {
+        font-weight: normal;
+    }
+
+    .education-institution {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .education-detail {
+        font-size: 14px;
+        color: var(--muted);
+        max-width: 780px;
+    }
+
+    .education-detail strong {
+        color: var(--ink);
+        font-weight: normal;
     }
 
     /* TEACHING */
@@ -503,13 +587,21 @@
             padding: 30px;
         }
 
-        .experience-grid {
-            grid-template-columns: 1fr;
+        .publication {
+            grid-template-columns: 40px 1fr;
+            gap: 15px;
         }
 
-        .publication {
-            grid-template-columns: 45px 1fr;
-            gap: 15px;
+        .publication-category {
+            margin-top: 40px;
+        }
+
+        .education-item {
+            padding: 30px 0;
+        }
+
+        .experience-grid {
+            grid-template-columns: 1fr;
         }
 
         footer {
@@ -542,6 +634,7 @@
         <a href="#research">Research</a>
         <a href="./mumtime/">MUMTIME</a>
         <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
         <a href="#teaching">Teaching</a>
         <a href="#contact">Contact</a>
     </div>
@@ -824,78 +917,356 @@
 
             <h2>
                 Selected<br>
-                work
+                publications &amp; outputs
             </h2>
 
             <p class="lead">
-                My publication record includes quantitative methodological
-                research, qualitative research and systematic review work.
+                A selection of peer-reviewed articles, research outputs
+                and methodological resources. Please refer to my CV for
+                the full publication and research output list.
             </p>
+
+
+            <!-- PEER-REVIEWED JOURNAL ARTICLES -->
+
+            <div class="publication-category">
+                Peer-reviewed journal articles
+            </div>
 
             <div class="publication-list">
 
                 <div class="publication">
+
                     <div class="pub-number">01</div>
+
                     <div>
+
                         <div class="pub-title">
-                            Publication title
+                            <a href="https://jtur.iatur.org/home/article/06be4cd6-d12b-4b04-97bc-7e4254c3f89e#:~:text=After%20controlling%20for%20observable%20characteristics,technologies%20in%20facilitating%20diary%20completion."
+                               target="_blank"
+                               rel="noopener">
+                                Does Diary Mode Matter in Time-Use Research?
+                            </a>
                         </div>
+
+                        <div class="pub-authors">
+                            Chatzitheochari, S. and <strong>Mylona, E.</strong> (2022)
+                        </div>
+
                         <div class="pub-details">
-                            Journal for Time Use Research
+                            <em>Journal of Time Use Research</em>, 17(1)
                         </div>
+
                     </div>
+
                 </div>
 
+
                 <div class="publication">
+
                     <div class="pub-number">02</div>
+
                     <div>
+
                         <div class="pub-title">
-                            Publication title
+                            <a href="https://jtur.iatur.org/home/article/0f411044-b0f0-4823-95f4-378b7b5f4dd8"
+                               target="_blank"
+                               rel="noopener">
+                                Data Quality in Web and App Diaries: A Person-Level Comparison
+                            </a>
                         </div>
+
+                        <div class="pub-authors">
+                            Chatzitheochari, S. and <strong>Mylona, E.</strong> (2021)
+                        </div>
+
                         <div class="pub-details">
-                            Journal for Time Use Research
+                            <em>Journal of Time Use Research</em>, 16(2)
                         </div>
+
                     </div>
+
                 </div>
 
+
                 <div class="publication">
+
                     <div class="pub-number">03</div>
-                    <div>
-                        <div class="pub-title">
-                            Publication title
-                        </div>
-                        <div class="pub-details">
-                            BMC Research Notes
-                        </div>
-                    </div>
-                </div>
 
-                <div class="publication">
-                    <div class="pub-number">04</div>
                     <div>
+
                         <div class="pub-title">
-                            Systematic review chapter — publication details to be added
+                            <a href="https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-021-05778-3"
+                               target="_blank"
+                               rel="noopener">
+                                Acceptability and feasibility of strategies to promote healthy dietary choices in UK secondary school canteens: a qualitative study
+                            </a>
                         </div>
+
+                        <div class="pub-authors">
+                            Murphy, M., Mensah, D., <strong>Mylona, E.</strong> and Oyebode, O. (2021)
+                        </div>
+
                         <div class="pub-details">
-                            The Lancet Meeting Abstracts · publication pending
+                            <em>BMC Research Notes</em>, 14(1)
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
 
-            <div class="links">
-                <a class="link-button" href="#">
-                    Full publications
-                </a>
 
-                <a class="link-button" href="#">
+            <!-- RESEARCH IN PROGRESS -->
+
+            <div class="publication-category">
+                Research in progress
+            </div>
+
+            <div class="publication-list">
+
+                <div class="publication">
+
+                    <div class="pub-number">01</div>
+
+                    <div>
+
+                        <div class="pub-title">
+                            The association between family structure and adolescent physical activity levels: a systematic review
+                        </div>
+
+                        <div class="pub-authors">
+                            <strong>Mylona, E.</strong>, Kletter, M., M Jones, H., Murphy, M., Lampard, R. and Oyebode, O. (2022)
+                        </div>
+
+                        <div class="pub-details">
+                            <em>The Lancet Meeting Abstracts</em>, 400(S66).
+                            <a href="https://www.medrxiv.org/content/10.1101/2023.07.04.23292220v1"
+                               target="_blank"
+                               rel="noopener">
+                                Full article available on MedRxiv →
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- POLICY AND TECHNICAL OUTPUTS -->
+
+            <div class="publication-category">
+                Policy briefings, technical notes &amp; other outputs
+            </div>
+
+            <div class="publication-list">
+
+                <div class="publication">
+
+                    <div class="pub-number">01</div>
+
+                    <div>
+
+                        <div class="pub-title">
+                            <a href="https://datacatalogue.ukdataservice.ac.uk/studies/study/8156#documentation"
+                               target="_blank"
+                               rel="noopener">
+                                Millennium Cohort Study age 14 sweep (MCS6): Time Use Diary User Guide (Version 2)
+                            </a>
+                        </div>
+
+                        <div class="pub-authors">
+                            <strong>Mylona, E.</strong>, Lamote de Grignon Perez, J., Rosenberg, R., Sanchez-Galvez, A. and Fitzsimons, E. (2025)
+                        </div>
+
+                        <div class="pub-details">
+                            Centre for Longitudinal Studies, UCL
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="pub-number">02</div>
+
+                    <div>
+
+                        <div class="pub-title">
+                            <a href="https://whatworkswellbeing.org/resources/time-use-data-what-can-instantaneous-enjoyment-tell-us-about-life-satisfaction/"
+                               target="_blank"
+                               rel="noopener">
+                                What can instantaneous enjoyment tell us about life satisfaction?
+                            </a>
+                        </div>
+
+                        <div class="pub-authors">
+                            <strong>Mylona, E.</strong> and Gershuny, J. (2023)
+                        </div>
+
+                        <div class="pub-details">
+                            <em>What Works Centre for Wellbeing</em>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="pub-number">03</div>
+
+                    <div>
+
+                        <div class="pub-title">
+                            <a href="https://www.timeuse.org/programmes-for-using-timeuse-data"
+                               target="_blank"
+                               rel="noopener">
+                                Technical note: Data cleaning and management of the Click and Drag Diary Instrument (CaDDI) time diary data
+                            </a>
+                        </div>
+
+                        <div class="pub-authors">
+                            <strong>Mylona, E.</strong> (2022)
+                        </div>
+
+                        <div class="pub-details">
+                            <em>Centre for Time Use Research and the What Works Centre for Wellbeing</em>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="publication-note">
+                This is a selected list of publications and research outputs.
+                Please refer to my CV for the full list.
+            </p>
+
+            <div class="links">
+
+                <a class="link-button"
+                   href="https://scholar.google.com/citations?user=fTpy5ksAAAAJ&hl=en"
+                   target="_blank"
+                   rel="noopener">
                     Google Scholar
                 </a>
 
-                <a class="link-button" href="#">
+                <a class="link-button"
+                   href="https://orcid.org/0000-0002-9929-4197"
+                   target="_blank"
+                   rel="noopener">
                     ORCID
                 </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-grid">
+
+        <div class="section-label">
+            04 · Education
+        </div>
+
+        <div>
+
+            <h2>
+                Education<br>
+                &amp; qualifications
+            </h2>
+
+            <div class="education-list">
+
+                <div class="education-item">
+
+                    <div class="education-degree">
+                        <strong>Ph.D. in Sociology</strong>
+                    </div>
+
+                    <div class="education-institution">
+                        University of Warwick, UK · 2019–2024
+                    </div>
+
+                    <div class="education-detail">
+                        Funded by ESRC (UKRI). Viva: 04 Apr 2024;
+                        degree formally awarded: 10 Dec 2024.
+                        <br><br>
+                        <strong>Thesis:</strong>
+                        <em>Social Determinants and Measurement of Adolescent Physical Activity Levels</em>
+                        <br>
+                        <strong>Supervisors:</strong>
+                        Dr Richard Lampard, Prof Oyinlola Oyebode
+                        (partly: Dr Stella Chatzitheochari)
+                    </div>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="education-degree">
+                        <strong>Associate Fellow of the Higher Education Academy (AFHEA)</strong>
+                    </div>
+
+                    <div class="education-institution">
+                        Awarded August 2021
+                    </div>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="education-degree">
+                        <strong>MA in Social Science Research (Sociology)</strong>
+                    </div>
+
+                    <div class="education-institution">
+                        University of Warwick, UK · 2018–2019
+                    </div>
+
+                    <div class="education-detail">
+                        Merit (69); part of the ESRC 1+3 programme.
+                    </div>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="education-degree">
+                        <strong>BA (Hons) Sociology &amp; Quantitative Methods</strong>
+                    </div>
+
+                    <div class="education-institution">
+                        University of Warwick, UK · 2015–2018
+                    </div>
+
+                    <div class="education-detail">
+                        First Class Honours.
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
@@ -912,7 +1283,7 @@
     <div class="section-grid">
 
         <div class="section-label">
-            04 · Teaching
+            05 · Teaching
         </div>
 
         <div>
@@ -994,7 +1365,7 @@
     <div class="section-grid">
 
         <div class="section-label">
-            05 · Contact
+            06 · Contact
         </div>
 
         <div>
@@ -1011,26 +1382,31 @@
             </p>
 
             <a class="contact-link"
-               href="mailto:YOUR.EMAIL@example.com">
-                YOUR.EMAIL@example.com
+               href="mailto:mylona.elena@ucy.ac.cy">
+                mylona.elena@ucy.ac.cy
             </a>
 
             <div class="links">
 
-                <a class="link-button" href="#">
+                <a class="link-button"
+                   href="https://orcid.org/0000-0002-9929-4197"
+                   target="_blank"
+                   rel="noopener">
                     ORCID
                 </a>
 
-                <a class="link-button" href="#">
+                <a class="link-button"
+                   href="https://scholar.google.com/citations?user=fTpy5ksAAAAJ&hl=en"
+                   target="_blank"
+                   rel="noopener">
                     Google Scholar
                 </a>
 
-                <a class="link-button" href="#">
-                    GitHub
-                </a>
-
-                <a class="link-button" href="#">
-                    CV
+                <a class="link-button"
+                   href="https://www.linkedin.com/in/elena-mylonaa/"
+                   target="_blank"
+                   rel="noopener">
+                    LinkedIn
                 </a>
 
             </div>
