@@ -1,782 +1,794 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MUMTIME | Motherhood, time and inequality in Cyprus and beyond</title>
-
-<style>
-
-:root {
-    --cream: #f4efe7;
-    --cream-dark: #e8dfd3;
-    --ink: #252321;
-    --muted: #746d65;
-    --terracotta: #a55f4c;
-    --burgundy: #63343b;
-    --sage: #7d8870;
-    --line: #d6cec3;
-    --white: #fffdf8;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--ink);
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-a {
-    color: inherit;
-}
-
-.page {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 55px;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--line);
-}
-
-.nav-brand {
-    display: flex;
-    align-items: baseline;
-}
-
-.nav-brand-main {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
-    letter-spacing: -0.5px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 35px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--terracotta);
-    transition: width 0.25s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 82vh;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    align-items: center;
-    gap: 80px;
-    padding: 90px 0 100px;
-    border-bottom: 1px solid var(--line);
-    position: relative;
-}
-
-.hero-copy {
-    max-width: 760px;
-}
-
-.eyebrow {
-    color: var(--terracotta);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 10px;
-    margin-bottom: 30px;
-}
-
-.hero h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(80px, 12vw, 175px);
-    font-weight: normal;
-    line-height: 0.78;
-    letter-spacing: -8px;
-    margin: 0;
-}
-
-.hero-title {
-    margin-top: 45px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(28px, 3.2vw, 44px);
-    line-height: 1.25;
-    max-width: 650px;
-}
-
-.hero-description {
-    max-width: 650px;
-    margin-top: 28px;
-    color: var(--muted);
-    font-size: 17px;
-}
-
-.hero-meta {
-    margin-top: 35px;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.hero-meta strong {
-    font-weight: normal;
-    color: var(--burgundy);
-}
-
-.portrait-wrap {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.portrait-frame {
-    width: min(430px, 100%);
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    background: var(--cream-dark);
-    position: relative;
-}
-
-.portrait-frame::before {
-    content: "";
-    position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(255,255,255,0.45);
-    z-index: 2;
-    pointer-events: none;
-}
-
-.portrait-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.8s ease;
-}
-
-.portrait-frame:hover img {
-    transform: scale(1.025);
-}
-
-.portrait-caption {
-    position: absolute;
-    bottom: -25px;
-    left: -35px;
-    background: var(--burgundy);
-    color: var(--white);
-    padding: 16px 20px;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    z-index: 3;
-}
-
-
-/* =========================
-   PROJECT INTRO
-========================= */
-
-.project-intro {
-    padding: 120px 0 100px;
-    border-bottom: 1px solid var(--line);
-}
-
-.project-intro-grid {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 90px;
-}
-
-.section-label {
-    color: var(--terracotta);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding-top: 10px;
-}
-
-.project-intro h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    font-size: clamp(45px, 6vw, 85px);
-    line-height: 0.95;
-    letter-spacing: -3px;
-    margin: 0 0 45px;
-}
-
-.project-intro-lead {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(25px, 3vw, 36px);
-    line-height: 1.4;
-    max-width: 900px;
-    margin-bottom: 35px;
-}
-
-.project-intro p {
-    max-width: 800px;
-}
-
-
-/* =========================
-   PROJECT STATEMENT
-========================= */
-
-.project-statement {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-}
-
-.statement-card {
-    background: var(--cream-dark);
-    padding: 45px;
-}
-
-.statement-card:nth-child(2) {
-    background: var(--burgundy);
-    color: var(--white);
-}
-
-.statement-card:nth-child(3) {
-    background: var(--sage);
-    color: var(--white);
-}
-
-.statement-number {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    margin-bottom: 35px;
-}
-
-.statement-card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 1.2;
-    margin: 0 0 20px;
-}
-
-.statement-card p {
-    margin: 0;
-    color: var(--muted);
-}
-
-.statement-card:nth-child(2) p,
-.statement-card:nth-child(3) p {
-    color: #eee5e2;
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-section {
-    padding: 125px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.section-grid {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 90px;
-}
-
-h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(50px, 7vw, 90px);
-    font-weight: normal;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    margin: 0 0 50px;
-}
-
-.lead {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 27px;
-    line-height: 1.45;
-    max-width: 850px;
-    margin-bottom: 45px;
-}
-
-.project-block {
-    max-width: 900px;
-    margin-bottom: 80px;
-}
-
-.project-block h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    font-weight: normal;
-    margin: 0 0 20px;
-}
-
-.project-block p {
-    max-width: 800px;
-}
-
-
-/* =========================
-   PROJECT DETAILS
-========================= */
-
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    margin-top: 70px;
-}
-
-.detail {
-    background: var(--cream);
-    padding: 35px;
-    min-height: 190px;
-}
-
-.detail-label {
-    color: var(--terracotta);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 25px;
-}
-
-.detail-value {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
-    line-height: 1.3;
-}
-
-.detail-sub {
-    display: block;
-    color: var(--muted);
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.5;
-    margin-top: 10px;
-}
-
-
-/* =========================
-   NEWS
-========================= */
-
-.news-intro {
-    margin-bottom: 70px;
-}
-
-.news-list {
-    max-width: 950px;
-    border-top: 1px solid var(--line);
-}
-
-.news-item {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 45px;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.news-date {
-    color: var(--terracotta);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.news-content h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 29px;
-    font-weight: normal;
-    line-height: 1.25;
-    margin: 0 0 12px;
-}
-
-.news-content p {
-    color: var(--muted);
-    margin: 0;
-    max-width: 700px;
-}
-
-
-/* =========================
-   ABOUT RESEARCHER
-========================= */
-
-.researcher-intro {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 30px;
-    line-height: 1.45;
-    max-width: 850px;
-    margin-bottom: 50px;
-}
-
-.researcher-text {
-    max-width: 800px;
-}
-
-.researcher-text p {
-    margin-bottom: 25px;
-}
-
-.research-areas {
-    margin-top: 70px;
-    border-top: 1px solid var(--line);
-    max-width: 850px;
-}
-
-.research-area {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 25px;
-    padding: 25px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.research-area-number {
-    color: var(--terracotta);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-}
-
-.research-area-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
-}
-
-
-/* =========================
-   LINKS
-========================= */
-
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 45px;
-}
-
-.link-button {
-    display: inline-block;
-    border: 1px solid var(--ink);
-    padding: 11px 20px;
-    text-decoration: none;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    transition: all 0.25s ease;
-}
-
-.link-button:hover {
-    background: var(--ink);
-    color: var(--cream);
-}
-
-
-/* =========================
-   TEACHING
-========================= */
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    margin-top: 60px;
-    max-width: 900px;
-}
-
-.experience {
-    background: var(--cream);
-    padding: 35px;
-    min-height: 190px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: background 0.25s ease;
-}
-
-.experience:hover {
-    background: var(--cream-dark);
-}
-
-.experience-number {
-    color: var(--terracotta);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-}
-
-.experience h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    margin: 0;
-    font-size: 27px;
-    font-weight: normal;
-    line-height: 1.2;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-link {
-    display: inline-block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(30px, 5vw, 55px);
-    text-decoration: none;
-    border-bottom: 1px solid var(--terracotta);
-    transition: color 0.2s ease;
-    word-break: break-word;
-}
-
-.contact-link:hover {
-    color: var(--terracotta);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 55px 0 70px;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    padding-bottom: 35px;
-    border-bottom: 1px solid var(--line);
-}
-
-.footer-university {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    line-height: 1.35;
-    text-align: right;
-}
-
-.footer-logos {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.footer-logos img {
-    max-width: 210px;
-    max-height: 65px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.footer-funding {
-    padding: 30px 0;
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-.footer-funding strong {
-    color: var(--ink);
-    font-weight: normal;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    color: var(--muted);
-    font-size: 12px;
-    padding-top: 20px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 850px) {
-
-    .page {
-        padding: 0 25px;
-    }
-
-    nav {
-        min-height: auto;
-        padding: 25px 0;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    .nav-links a {
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 70px 0 90px;
-        gap: 70px;
-    }
-
-    .hero h1 {
-        font-size: 90px;
-        letter-spacing: -5px;
-    }
-
-    .portrait-wrap {
-        justify-content: flex-start;
-    }
-
-    .portrait-frame {
-        width: min(390px, 100%);
-    }
-
-    .portrait-caption {
-        left: 15px;
-    }
-
-    .project-intro-grid,
-    .section-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .project-statement {
-        grid-template-columns: 1fr;
-    }
-
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    section,
-    .project-intro {
-        padding: 85px 0;
-    }
-
-    h2 {
-        font-size: 58px;
-    }
-
-    .news-item {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .footer-top,
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-university {
-        text-align: left;
-    }
-
-    .footer-logos {
-        align-items: flex-start;
-    }
-
-    .footer-logos img {
-        max-width: 170px;
-    }
-}
-
-
-@media (max-width: 550px) {
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 72px;
-    }
-
-    .hero-title {
-        font-size: 27px;
-    }
-
-    h2 {
-        font-size: 50px;
-    }
-
-    .statement-card {
-        padding: 30px;
-    }
-
-    .research-question {
-        grid-template-columns: 45px 1fr;
-        gap: 15px;
-    }
-
-    .research-question-text {
-        font-size: 20px;
-    }
-
-    .publication {
-        grid-template-columns: 40px 1fr;
-        gap: 15px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MUMTIME | Motherhood, time and inequality in Cyprus and beyond</title>
+
+    <style>
+        :root {
+            --cream: #f4efe7;
+            --cream-dark: #e8dfd3;
+            --ink: #252321;
+            --muted: #746d65;
+            --terracotta: #a55f4c;
+            --burgundy: #63343b;
+            --sage: #7d8870;
+            --sage-dark: #68745c;
+            --line: #d6cec3;
+            --white: #fffdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 55px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+        }
+
+        .nav-brand-main {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-brand-small {
+            color: var(--muted);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-grant {
+            color: var(--terracotta);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-left: 18px;
+            border-left: 1px solid var(--line);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terracotta);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 82vh;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 80px;
+            padding: 90px 0 100px;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+        }
+
+        .hero-copy {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            color: var(--terracotta);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(80px, 12vw, 175px);
+            font-weight: normal;
+            line-height: 0.78;
+            letter-spacing: -8px;
+            margin: 0;
+        }
+
+        .hero-title {
+            margin-top: 45px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 3.2vw, 44px);
+            line-height: 1.25;
+            max-width: 650px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .hero-meta {
+            margin-top: 35px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .hero-meta strong {
+            font-weight: normal;
+            color: var(--burgundy);
+        }
+
+        .portrait-wrap {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .portrait-frame {
+            width: min(430px, 100%);
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background: var(--cream-dark);
+            position: relative;
+        }
+
+        .portrait-frame::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border: 1px solid rgba(255,255,255,0.45);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .portrait-frame:hover img {
+            transform: scale(1.025);
+        }
+
+        .portrait-caption {
+            position: absolute;
+            bottom: -25px;
+            left: -35px;
+            background: var(--burgundy);
+            color: var(--white);
+            padding: 16px 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            z-index: 3;
+        }
+
+
+        /* =========================
+           PROJECT INTRO
+        ========================= */
+
+        .project-intro {
+            padding: 120px 0 100px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .project-intro-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 90px;
+        }
+
+        .section-label {
+            color: var(--terracotta);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-top: 10px;
+        }
+
+        .project-intro h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: clamp(45px, 6vw, 85px);
+            line-height: 0.95;
+            letter-spacing: -3px;
+            margin: 0 0 45px;
+        }
+
+        .project-intro-lead {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(25px, 3vw, 36px);
+            line-height: 1.4;
+            max-width: 900px;
+            margin-bottom: 35px;
+        }
+
+        .project-intro p {
+            max-width: 800px;
+        }
+
+
+        /* =========================
+           PROJECT STATEMENT
+        ========================= */
+
+        .project-statement {
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--line);
+        }
+
+        .statement-card {
+            background: var(--cream-dark);
+            padding: 45px;
+        }
+
+        .statement-card:nth-child(2) {
+            background: var(--burgundy);
+            color: var(--white);
+        }
+
+        .statement-card:nth-child(3) {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .statement-number {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .statement-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 1.2;
+            margin: 0 0 20px;
+        }
+
+        .statement-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .statement-card:nth-child(2) p,
+        .statement-card:nth-child(3) p {
+            color: rgba(255,255,255,0.85);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 125px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 90px;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(50px, 7vw, 90px);
+            font-weight: normal;
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin: 0 0 50px;
+        }
+
+        .lead {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            line-height: 1.45;
+            max-width: 850px;
+            margin-bottom: 45px;
+        }
+
+        .project-block {
+            max-width: 900px;
+            margin-bottom: 80px;
+        }
+
+        .project-block h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: normal;
+            margin: 0 0 20px;
+        }
+
+        .project-block p {
+            max-width: 800px;
+        }
+
+
+        /* =========================
+           PROJECT DETAILS
+        ========================= */
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--line);
+            margin-top: 70px;
+        }
+
+        .detail {
+            background: var(--cream);
+            padding: 35px;
+            min-height: 190px;
+        }
+
+        .detail-label {
+            color: var(--terracotta);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            margin-bottom: 25px;
+        }
+
+        .detail-value {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+
+        /* =========================
+           METHODOLOGY
+        ========================= */
+
+        .methodology-section {
+            background: var(--cream);
+        }
+
+
+        /* =========================
+           NEWS
+        ========================= */
+
+        .news-section {
+            background: var(--sage);
+            color: var(--white);
+            border-bottom: none;
+        }
+
+        .news-section .section-label {
+            color: var(--white);
+        }
+
+        .news-section h2 {
+            color: var(--white);
+        }
+
+        .news-section .lead {
+            color: rgba(255,255,255,0.88);
+        }
+
+        .news-list {
+            max-width: 950px;
+            border-top: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 45px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .news-date {
+            color: var(--white);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .news-content h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            font-weight: normal;
+            line-height: 1.25;
+            margin: 0 0 12px;
+            color: var(--white);
+        }
+
+        .news-content p {
+            color: rgba(255,255,255,0.82);
+            margin: 0;
+            max-width: 700px;
+        }
+
+
+        /* =========================
+           ABOUT RESEARCHER
+        ========================= */
+
+        .researcher-intro {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            line-height: 1.45;
+            max-width: 850px;
+            margin-bottom: 50px;
+        }
+
+        .researcher-text {
+            max-width: 800px;
+        }
+
+        .researcher-text p {
+            margin-bottom: 25px;
+        }
+
+        .research-areas {
+            margin-top: 70px;
+            border-top: 1px solid var(--line);
+            max-width: 850px;
+        }
+
+        .research-area {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 25px;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .research-area-number {
+            color: var(--terracotta);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+        }
+
+        .research-area-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .link-button {
+            display: inline-block;
+            border: 1px solid var(--ink);
+            padding: 11px 20px;
+            text-decoration: none;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: all 0.25s ease;
+        }
+
+        .link-button:hover {
+            background: var(--ink);
+            color: var(--cream);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            background: var(--burgundy);
+            color: var(--white);
+            border-bottom: none;
+        }
+
+        .contact-section .section-label {
+            color: #e8c8c2;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+        }
+
+        .contact-section .lead {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contact-link {
+            display: inline-block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 5vw, 55px);
+            text-decoration: none;
+            border-bottom: 1px solid #e8c8c2;
+            transition: color 0.2s ease;
+            word-break: break-word;
+            color: var(--white);
+        }
+
+        .contact-link:hover {
+            color: #e8c8c2;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 55px 0 70px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .footer-university {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            line-height: 1.35;
+            text-align: right;
+            order: 2;
+        }
+
+        .footer-logos {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            order: 1;
+        }
+
+        .footer-logos img {
+            max-width: 210px;
+            max-height: 65px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .footer-funding {
+            padding: 30px 0;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .footer-funding strong {
+            color: var(--ink);
+            font-weight: normal;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            color: var(--muted);
+            font-size: 12px;
+            padding-top: 20px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .page {
+                padding: 0 25px;
+            }
+
+            nav {
+                min-height: auto;
+                padding: 25px 0;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .nav-brand {
+                flex-wrap: wrap;
+                gap: 8px 15px;
+            }
+
+            .nav-brand-small {
+                display: none;
+            }
+
+            .nav-grant {
+                border-left: none;
+                padding-left: 0;
+                width: 100%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 70px 0 90px;
+                gap: 70px;
+            }
+
+            .hero h1 {
+                font-size: 90px;
+                letter-spacing: -5px;
+            }
+
+            .portrait-wrap {
+                justify-content: flex-start;
+            }
+
+            .portrait-frame {
+                width: min(390px, 100%);
+            }
+
+            .portrait-caption {
+                left: 15px;
+            }
+
+            .project-intro-grid,
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .project-statement {
+                grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section,
+            .project-intro {
+                padding: 85px 0;
+            }
+
+            h2 {
+                font-size: 58px;
+            }
+
+            .news-item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .footer-top,
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+            .footer-university {
+                text-align: left;
+                order: 2;
+            }
+
+            .footer-logos {
+                align-items: flex-start;
+            }
+
+            .footer-logos img {
+                max-width: 170px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 72px;
+            }
+
+            .hero-title {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 50px;
+            }
+
+            .statement-card {
+                padding: 30px;
+            }
+
+            .publication {
+                grid-template-columns: 40px 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -786,542 +798,246 @@ footer {
 <div class="page">
 
 
-<!-- NAVIGATION -->
+    <!-- NAVIGATION -->
 
-<nav>
+    <nav>
 
-    <div class="nav-brand">
-        <div class="nav-brand-main">MUMTIME</div>
-    </div>
+        <div class="nav-brand">
 
-    <div class="nav-links">
-        <a href="#project">The Project</a>
-        <a href="#news">News</a>
-        <a href="#researcher">About the Researcher</a>
-    </div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="hero-copy">
-
-        <div class="eyebrow">
-            Motherhood · Time · Inequality
-        </div>
-
-        <h1>
-            MUM<br>TIME
-        </h1>
-
-        <div class="hero-title">
-            Understanding how mothers spend, experience and negotiate time in Cyprus.
-        </div>
-
-        <div class="hero-description">
-            A Marie Skłodowska-Curie research project exploring time poverty,
-            gender inequality and the everyday lives of mothers in Cyprus.
-        </div>
-
-        <div class="hero-meta">
-            <strong>Marie Skłodowska-Curie Postdoctoral Fellowship</strong><br>
-            Department of Education · University of Cyprus
-        </div>
-
-    </div>
-
-
-    <div class="portrait-wrap">
-
-        <div class="portrait-frame">
-            <img src="./elena.jpg" alt="Dr Elena Mylona">
-        </div>
-
-        <div class="portrait-caption">
-            Project researcher · Dr Elena Mylona
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- PROJECT INTRODUCTION -->
-
-<div class="project-intro" id="project">
-
-    <div class="project-intro-grid">
-
-        <div class="section-label">
-            The Project
-        </div>
-
-        <div>
-
-            <h2>
-                Time is not<br>
-                equally lived.
-            </h2>
-
-            <div class="project-intro-lead">
-                MUMTIME examines how mothers in Cyprus organise their days,
-                experience time pressure and negotiate the competing demands
-                of work, care and everyday life.
+            <div class="nav-brand-main">
+                MUMTIME
             </div>
 
-            <p>
-                The project addresses a major gap in research on time use in Cyprus.
-                While time-use data are widely used internationally to understand
-                gender inequality, work, care and wellbeing, Cyprus has not previously
-                had nationally representative time diary data of this kind.
-            </p>
-
-            <p>
-                MUMTIME will use an adapted open-source digital time diary tool
-                developed by the Centre for Time Use Research to collect detailed
-                information about how mothers spend a 24-hour day, including paid
-                work, childcare, domestic work, leisure and other activities.
-            </p>
-
-
-            <!-- RESEARCH QUESTIONS -->
-
-            <div class="project-statement">
-
-                <div class="statement-card">
-
-                    <div class="statement-number">
-                        01
-                    </div>
-
-                    <h3>
-                        How do mothers spend their time?
-                    </h3>
-
-                    <p>
-                        How do mothers in Cyprus allocate their time across paid work,
-                        unpaid work, personal care, and leisure activities, and what does
-                        this reveal about their experience of time poverty in daily life?
-                    </p>
-
-                </div>
-
-
-                <div class="statement-card">
-
-                    <div class="statement-number">
-                        02
-                    </div>
-
-                    <h3>
-                        What does time reveal about the motherhood penalty?
-                    </h3>
-
-                    <p>
-                        To what extent do patterns of time-use among working mothers
-                        reflect and reinforce the motherhood penalty beyond its
-                        economic dimensions?
-                    </p>
-
-                </div>
-
-
-                <div class="statement-card">
-
-                    <div class="statement-number">
-                        03
-                    </div>
-
-                    <h3>
-                        What can time-use tell us about gender equality?
-                    </h3>
-
-                    <p>
-                        How do these time-use patterns inform gender equality policies?
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT DETAILS -->
-
-            <div class="details-grid">
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Location
-                    </div>
-
-                    <div class="detail-value">
-                        Cyprus
-                    </div>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Duration
-                    </div>
-
-                    <div class="detail-value">
-                        2026–2029
-                    </div>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Approach
-                    </div>
-
-                    <div class="detail-value">
-                        Mixed methods
-                    </div>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Secondment
-                    </div>
-
-                    <div class="detail-value">
-                        Universitat Autònoma de Barcelona
-                        <span class="detail-sub">
-                            with Prof Pablo Gracia
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Secondment
-                    </div>
-
-                    <div class="detail-value">
-                        European University Institute
-                        <span class="detail-sub">
-                            with Dr Lea Pessin
-                        </span>
-                    </div>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <div class="detail-label">
-                        Non-academic placement
-                    </div>
-
-                    <div class="detail-value">
-                        Cyprus Statistical Service
-                        <span class="detail-sub">
-                            CYSTAT
-                        </span>
-                    </div>
-
-                </div>
-
+            <div class="nav-grant">
+                MSCA Grant Agreement ID: 101271573
             </div>
 
         </div>
 
-    </div>
 
-</div>
-
-
-<!-- METHODOLOGY -->
-
-<section>
-
-    <div class="section-grid">
-
-        <div class="section-label">
-            02 · Methodology
+        <div class="nav-links">
+            <a href="#project">The Project</a>
+            <a href="#news">News</a>
+            <a href="#researcher">About the Researcher</a>
         </div>
 
-        <div>
-
-            <h2>
-                Following<br>
-                the day.
-            </h2>
+    </nav>
 
 
-            <div class="project-block">
+    <!-- HERO -->
 
-                <h3>
-                    Digital time diaries
-                </h3>
+    <header class="hero">
 
-                <p>
-                    MUMTIME will collect detailed 24-hour time diaries using an
-                    adapted version of the Extended Light Digital Diary Instrument
-                    (o-ELiDDI). Participants record their activities across the day,
-                    allowing researchers to capture both primary and secondary
-                    activities, location, co-presence, ICT use and enjoyment.
-                </p>
+        <div class="hero-copy">
 
+            <div class="eyebrow">
+                Motherhood · Time · Inequality
             </div>
 
+            <h1>
+                MUM<br>TIME
+            </h1>
 
-            <div class="project-block">
-
-                <h3>
-                    Beyond the clock
-                </h3>
-
-                <p>
-                    Time-use research is not only about measuring minutes. MUMTIME
-                    also considers how activities are experienced and how mothers
-                    negotiate competing demands in everyday life.
-                </p>
-
+            <div class="hero-title">
+                Understanding how mothers spend, experience and negotiate time in Cyprus.
             </div>
 
+            <div class="hero-description">
+                A Marie Skłodowska-Curie research project exploring time poverty,
+                gender inequality and the everyday lives of mothers in Cyprus.
+            </div>
 
-            <div class="project-block">
-
-                <h3>
-                    Quantitative & qualitative perspectives
-                </h3>
-
-                <p>
-                    The project combines time-use data with qualitative interviews
-                    to connect patterns in everyday activity with mothers' own
-                    accounts of their experiences.
-                </p>
-
+            <div class="hero-meta">
+                <strong>Marie Skłodowska-Curie Postdoctoral Fellowship</strong><br>
+                Department of Education · University of Cyprus
             </div>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="portrait-wrap">
 
+            <div class="portrait-frame">
+                <img src="./elena.jpg" alt="Dr Elena Mylona">
+            </div>
 
-<!-- NEWS -->
+            <div class="portrait-caption">
+                Project researcher · Dr Elena Mylona
+            </div>
 
-<section id="news">
-
-    <div class="section-grid">
-
-        <div class="section-label">
-            03 · News
         </div>
 
-        <div>
+    </header>
 
-            <div class="news-intro">
+
+    <!-- PROJECT INTRODUCTION -->
+
+    <div class="project-intro" id="project">
+
+        <div class="project-intro-grid">
+
+            <div class="section-label">
+                The Project
+            </div>
+
+            <div>
 
                 <h2>
-                    What's<br>
-                    happening.
+                    Time is not<br>
+                    equally lived.
                 </h2>
 
-                <p class="lead">
-                    Updates from the MUMTIME project, including research,
-                    events, publications and project milestones.
-                </p>
-
-            </div>
-
-
-            <div class="news-list">
-
-                <div class="news-item">
-
-                    <div class="news-date">
-                        2026
-                    </div>
-
-                    <div class="news-content">
-
-                        <h3>
-                            MUMTIME begins
-                        </h3>
-
-                        <p>
-                            The MUMTIME Marie Skłodowska-Curie Postdoctoral Fellowship
-                            project begins at the University of Cyprus.
-                        </p>
-
-                    </div>
-
+                <div class="project-intro-lead">
+                    MUMTIME examines how mothers in Cyprus organise their days,
+                    experience time pressure and negotiate the competing demands
+                    of work, care and everyday life.
                 </div>
 
-
-                <div class="news-item">
-
-                    <div class="news-date">
-                        Coming soon
-                    </div>
-
-                    <div class="news-content">
-
-                        <h3>
-                            Research updates
-                        </h3>
-
-                        <p>
-                            Updates on data collection, events, publications and
-                            other project activities will appear here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT THE RESEARCHER -->
-
-<section id="researcher">
-
-    <div class="section-grid">
-
-        <div class="section-label">
-            04 · Researcher
-        </div>
-
-        <div>
-
-            <h2>
-                About<br>
-                the researcher.
-            </h2>
-
-            <div class="researcher-intro">
-                Dr Elena Mylona is a quantitative sociologist and public health
-                researcher interested in time use, research methods and inequality.
-            </div>
-
-            <div class="researcher-text">
-
                 <p>
-                    Elena completed an ESRC 1+3 fully funded doctoral studentship
-                    at the University of Warwick, including an integrated Master's
-                    in Social Science Research Methods and a PhD in Sociology.
+                    The project addresses a major gap in research on time use in Cyprus.
+                    While time-use data are widely used internationally to understand
+                    gender inequality, work, care and wellbeing, Cyprus has not previously
+                    had nationally representative time diary data of this kind.
                 </p>
 
                 <p>
-                    Following her doctorate, she was awarded a one-year, part-time
-                    postdoctoral fellowship at the Institute of Advanced Study,
-                    University of Warwick. Alongside this, she continued working
-                    as a Research Fellow at the Centre for Time Use Research at UCL
-                    until the start of her MSCA award, a total of four years.
-                </p>
-
-                <p>
-                    Her research combines methodological development with substantive
-                    questions in sociology and public health, with a particular focus
-                    on time-use research and diary data.
+                    MUMTIME will use an adapted open-source digital time diary tool developed by the Centre for Time Use Research to
+                    collect detailed information about how mothers spend a 24-hour day,
+                    including paid work, childcare, domestic work, leisure and other
+                    activities.
                 </p>
 
 
-                <div class="research-areas">
+                <div class="project-statement">
 
-                    <div class="research-area">
+                    <div class="statement-card">
 
-                        <div class="research-area-number">
+                        <div class="statement-number">
                             01
                         </div>
 
-                        <div class="research-area-title">
-                            Sociology &amp; public health
-                        </div>
+                        <h3>
+                            How do mothers spend their time?
+                        </h3>
+
+                        <p>
+                            How do mothers in Cyprus allocate their time across paid work,
+                            unpaid work, personal care, and leisure activities, and what does
+                            this reveal about their experience of time poverty in daily life?
+                        </p>
 
                     </div>
 
 
-                    <div class="research-area">
+                    <div class="statement-card">
 
-                        <div class="research-area-number">
+                        <div class="statement-number">
                             02
                         </div>
 
-                        <div class="research-area-title">
-                            Quantitative research methods
-                        </div>
+                        <h3>
+                            What does time reveal about the motherhood penalty?
+                        </h3>
+
+                        <p>
+                            To what extent do patterns of time-use among working mothers
+                            reflect and reinforce the motherhood penalty beyond its economic
+                            dimensions?
+                        </p>
 
                     </div>
 
 
-                    <div class="research-area">
+                    <div class="statement-card">
 
-                        <div class="research-area-number">
+                        <div class="statement-number">
                             03
                         </div>
 
-                        <div class="research-area-title">
-                            Time-use research &amp; diary data
-                        </div>
+                        <h3>
+                            What can time-use tell us about gender equality?
+                        </h3>
 
-                    </div>
-
-
-                    <div class="research-area">
-
-                        <div class="research-area-number">
-                            04
-                        </div>
-
-                        <div class="research-area-title">
-                            Gender, inequality &amp; everyday life
-                        </div>
+                        <p>
+                            How do these time-use patterns inform gender equality policies?
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="links">
+                <!-- PROJECT DETAILS -->
 
-                    <a class="link-button"
-                       href="https://www.linkedin.com/in/elena-mylonaa/"
-                       target="_blank"
-                       rel="noopener">
-                        LinkedIn
-                    </a>
+                <div class="details-grid">
 
-                    <a class="link-button"
-                       href="https://orcid.org/0000-0002-9929-4197"
-                       target="_blank"
-                       rel="noopener">
-                        ORCID
-                    </a>
+                    <div class="detail">
+                        <div class="detail-label">
+                            Location
+                        </div>
 
-                    <a class="link-button"
-                       href="https://scholar.google.com/citations?user=fTpy5ksAAAAJ&hl=en"
-                       target="_blank"
-                       rel="noopener">
-                        Google Scholar
-                    </a>
+                        <div class="detail-value">
+                            Cyprus
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <div class="detail-label">
+                            Duration
+                        </div>
+
+                        <div class="detail-value">
+                            2026–2029
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <div class="detail-label">
+                            Approach
+                        </div>
+
+                        <div class="detail-value">
+                            Mixed methods
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <div class="detail-label">
+                            Secondment
+                        </div>
+
+                        <div class="detail-value">
+                            Universitat Autònoma de Barcelona<br>
+                            <small>with Prof Pablo Gracia</small>
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <div class="detail-label">
+                            Secondment
+                        </div>
+
+                        <div class="detail-value">
+                            European University Institute<br>
+                            <small>with Dr Lea Pessin</small>
+                        </div>
+                    </div>
+
+
+                    <div class="detail">
+                        <div class="detail-label">
+                            Non-academic placement
+                        </div>
+
+                        <div class="detail-value">
+                            Cyprus Statistical Service<br>
+                            <small>CYSTAT</small>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -1331,69 +1047,67 @@ footer {
 
     </div>
 
-</section>
 
+    <!-- METHODOLOGY -->
 
-<!-- TEACHING -->
+    <section class="methodology-section">
 
-<section>
+        <div class="section-grid">
 
-    <div class="section-grid">
+            <div class="section-label">
+                02 · Methodology
+            </div>
 
-        <div class="section-label">
-            05 · Teaching
-        </div>
+            <div>
 
-        <div>
+                <h2>
+                    Following<br>
+                    the day.
+                </h2>
 
-            <h2>
-                Teaching<br>
-                &amp; outreach.
-            </h2>
-
-            <p class="lead">
-                Teaching, research methods and widening access to research
-                have been an important part of my academic work.
-            </p>
-
-
-            <div class="experience-grid">
-
-                <div class="experience">
-
-                    <div class="experience-number">
-                        01
-                    </div>
+                <div class="project-block">
 
                     <h3>
-                        University teaching
+                        Digital time diaries
                     </h3>
+
+                    <p>
+                        MUMTIME will collect detailed 24-hour time diaries using an
+                        adapted version of the Extended Light Digital Diary Instrument
+                        (o-ELiDDI). Participants record their activities across the day,
+                        allowing researchers to capture both primary and secondary
+                        activities, location, co-presence, ICT use and enjoyment.
+                    </p>
 
                 </div>
 
 
-                <div class="experience">
-
-                    <div class="experience-number">
-                        02
-                    </div>
+                <div class="project-block">
 
                     <h3>
-                        Modules
+                        Beyond the clock
                     </h3>
+
+                    <p>
+                        Time-use research is not only about measuring minutes. MUMTIME
+                        also considers how activities are experienced and how mothers
+                        negotiate competing demands in everyday life.
+                    </p>
 
                 </div>
 
 
-                <div class="experience">
-
-                    <div class="experience-number">
-                        03
-                    </div>
+                <div class="project-block">
 
                     <h3>
-                        Research training
+                        Quantitative &amp; qualitative perspectives
                     </h3>
+
+                    <p>
+                        The project combines time-use data
+                        with qualitative interviews to connect patterns in everyday
+                        activity with mothers' own accounts of their experiences.
+                    </p>
 
                 </div>
 
@@ -1401,97 +1115,288 @@ footer {
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- CONTACT -->
+    <!-- NEWS -->
 
-<section>
+    <section id="news" class="news-section">
 
-    <div class="section-grid">
+        <div class="section-grid">
 
-        <div class="section-label">
-            06 · Contact
+            <div class="section-label">
+                03 · News
+            </div>
+
+            <div>
+
+                <div class="news-intro">
+
+                    <h2>
+                        What's<br>
+                        happening.
+                    </h2>
+
+                    <p class="lead">
+                        Updates from the MUMTIME project, including research,
+                        events, publications and project milestones.
+                    </p>
+
+                </div>
+
+
+                <div class="news-list">
+
+                    <div class="news-item">
+
+                        <div class="news-date">
+                            2026
+                        </div>
+
+                        <div class="news-content">
+
+                            <h3>
+                                MUMTIME begins
+                            </h3>
+
+                            <p>
+                                The MUMTIME Marie Skłodowska-Curie Postdoctoral Fellowship
+                                project begins at the University of Cyprus.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="news-item">
+
+                        <div class="news-date">
+                            Coming soon
+                        </div>
+
+                        <div class="news-content">
+
+                            <h3>
+                                Research updates
+                            </h3>
+
+                            <p>
+                                Updates on data collection, events, publications and
+                                other project activities will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div>
+    </section>
 
-            <h2>
-                Let's<br>
-                connect.
-            </h2>
 
-            <p class="lead">
-                I welcome conversations about MUMTIME, research collaboration,
-                methodology, time-use research, teaching and interdisciplinary projects.
-            </p>
+    <!-- ABOUT THE RESEARCHER -->
 
-            <a class="contact-link"
-               href="mailto:mylona.elena@ucy.ac.cy">
-                mylona.elena@ucy.ac.cy
-            </a>
+    <section id="researcher">
+
+        <div class="section-grid">
+
+            <div class="section-label">
+                04 · Researcher
+            </div>
+
+            <div>
+
+                <h2>
+                    About<br>
+                    the researcher.
+                </h2>
+
+                <div class="researcher-intro">
+                    Dr Elena Mylona is a quantitative sociologist and public health
+                    researcher interested in time use, research methods and inequality.
+                </div>
+
+                <div class="researcher-text">
+
+                    <p>
+                        Elena completed an ESRC 1+3 fully funded doctoral studentship
+                        at the University of Warwick, including an integrated Master's
+                        in Social Science Research Methods and a PhD in Sociology.
+                    </p>
+
+                    <p>
+                        Following her doctorate, she was awarded a one-year, part-time
+                        postdoctoral fellowship at the Institute of Advanced Study,
+                        University of Warwick. Alongside this, she continued working
+                        as a Research Fellow at the Centre for Time Use Research at UCL until the start of her MSCA award, total of four years.
+                    </p>
+
+                    <p>
+                        Her research combines methodological development with substantive
+                        questions in sociology and public health, with a particular focus
+                        on time-use research and diary data.
+                    </p>
+
+
+                    <div class="research-areas">
+
+                        <div class="research-area">
+                            <div class="research-area-number">01</div>
+
+                            <div class="research-area-title">
+                                Sociology &amp; public health
+                            </div>
+                        </div>
+
+
+                        <div class="research-area">
+                            <div class="research-area-number">02</div>
+
+                            <div class="research-area-title">
+                                Quantitative research methods
+                            </div>
+                        </div>
+
+
+                        <div class="research-area">
+                            <div class="research-area-number">03</div>
+
+                            <div class="research-area-title">
+                                Time-use research &amp; diary data
+                            </div>
+                        </div>
+
+
+                        <div class="research-area">
+                            <div class="research-area-number">04</div>
+
+                            <div class="research-area-title">
+                                Gender, inequality &amp; everyday life
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="links">
+
+                        <a class="link-button"
+                           href="https://www.linkedin.com/in/elena-mylonaa/"
+                           target="_blank"
+                           rel="noopener">
+                            LinkedIn
+                        </a>
+
+                        <a class="link-button"
+                           href="https://orcid.org/0000-0002-9929-4197"
+                           target="_blank"
+                           rel="noopener">
+                            ORCID
+                        </a>
+
+                        <a class="link-button"
+                           href="https://scholar.google.com/citations?user=fTpy5ksAAAAJ&hl=en"
+                           target="_blank"
+                           rel="noopener">
+                            Google Scholar
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- FOOTER -->
+    <!-- CONTACT -->
 
-<footer>
+    <section class="contact-section">
 
-    <div class="footer-top">
+        <div class="section-grid">
 
-        <div class="footer-logos">
+            <div class="section-label">
+                05 · Contact
+            </div>
 
-            <img src="./EUlogo.png"
-                 alt="European Union funding logo">
+            <div>
+
+                <h2>
+                    Let's<br>
+                    connect.
+                </h2>
+
+                <p class="lead">
+                    I welcome conversations about MUMTIME, research collaboration,
+                    methodology, time-use research, teaching and interdisciplinary projects.
+                </p>
+
+                <a class="contact-link"
+                   href="mailto:mylona.elena@ucy.ac.cy">
+                    mylona.elena@ucy.ac.cy
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-university">
+                Department of Education<br>
+                University of Cyprus
+            </div>
+
+            <div class="footer-logos">
+                <img src="./EUlogo.png" alt="European Union funding logo">
+            </div>
 
         </div>
 
 
-        <div class="footer-university">
+        <div class="footer-funding">
 
-            Department of Education<br>
-            University of Cyprus
+            Funded under:
+            <strong>Marie Skłodowska-Curie Actions (MSCA)</strong>
+            &nbsp;|&nbsp;
+            Project: <strong>MUMTIME</strong>
+            &nbsp;|&nbsp;
+            Grant agreement ID: <strong>101271573</strong>
 
         </div>
 
-    </div>
 
+        <div class="footer-bottom">
 
-    <div class="footer-funding">
+            <div>
+                © 2026 MUMTIME · Dr Elena Mylona
+            </div>
 
-        Funded under:
-        <strong>Marie Skłodowska-Curie Actions (MSCA)</strong>
-        &nbsp;|&nbsp;
-        Project: <strong>MUMTIME</strong>
-        &nbsp;|&nbsp;
-        Grant agreement ID: <strong>101271573</strong>
+            <div>
+                University of Cyprus
+            </div>
 
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <div>
-            © 2026 MUMTIME · Dr Elena Mylona
         </div>
 
-        <div>
-            University of Cyprus
-        </div>
-
-    </div>
-
-</footer>
-
+    </footer>
 
 </div>
 
 </body>
+
 </html>
